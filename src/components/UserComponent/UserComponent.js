@@ -274,4 +274,3 @@ const LogOutComponent = () => {
 };
 
 export default LogOutComponent;
-

@@ -1,11 +1,11 @@
 header.hero {
     height: 350px;
-    background-color: #04381ad9;
+    background-color: #d8dfd8;
     background-image: url('../../assets/nbad1.jpeg');
     background-size: 400px;
     background-repeat: no-repeat;
     background-position: center bottom;
-    padding-top: 40px;
+    padding-top: 60px;
   }
   
   header.hero h1,
@@ -15,8 +15,8 @@ header.hero {
   }
   
   header.hero h1 {
-    color: #fff;
-    font-size: 4.2em;
+    color: #d1cbcb;
+    font-size: 3.2em;
     margin-bottom: 20px;
   }
   

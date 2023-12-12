@@ -184,7 +184,7 @@ class EnhancedTableToolbar extends Component {
         {numSelected > 0 ? (
           <Typography
             sx={{ flex: "1 1 100%" }}
-            color="#990099"
+            color="#31ebeb"
             variant="subtitle1"
             component="div"
           >

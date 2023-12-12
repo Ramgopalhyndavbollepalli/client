@@ -22,7 +22,7 @@ export default function MenuComponent() {
   var pages = [];
   var settings = [];
   if (token) {
-    pages = ["My Budgets", "Monthly Budgets", "Dashboard", "expenses"];
+    pages = ["My Budgets", "Monthly Budgets", "Dashboard", ];
     settings = ["Profile", "Logout"];
   }
 
@@ -59,7 +59,7 @@ export default function MenuComponent() {
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
-              color: "#ff9900",
+              color: "white",
               textDecoration: "none",
             }}
           >
@@ -116,7 +116,7 @@ export default function MenuComponent() {
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
-              color: "#ff9900",
+              color: "white",
               textDecoration: "none",
             }}
           >

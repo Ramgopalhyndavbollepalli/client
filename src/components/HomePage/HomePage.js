@@ -5,27 +5,13 @@ import Hero from "../Hero/Hero";
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-import CommentIcon from '@mui/icons-material/Comment';
-import IconButton from '@mui/material/IconButton';
-import Button from "@mui/material/Button";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-
-
-
+import LinkIcon from '@mui/icons-material/Link';
 
 export default function HomePage() {
 
-
   const redirectToLink = (value) => {
     const token = localStorage.getItem('token');
-    if (token) {
-      // Redirect to a link for authenticated users
-      window.location.href = value.link.authenticated;
-    } else {
-      // Redirect to a link for unauthenticated users
-      window.location.href = value.link.unauthenticated;
-    }
+    return token ? value.link.authenticated : value.link.unauthenticated;
   };
 
   const sections = [
@@ -40,7 +26,7 @@ export default function HomePage() {
     },
     {
       title: 'Functionality 2',
-      // description: 'The  budgets can be added, edited, or deleted by users.',
+      description: 'The budgets can be added, edited, or deleted by users',
       function: 'Monthly Budgets',
       link: {
         authenticated: '/monthlybudgets',
@@ -63,44 +49,20 @@ export default function HomePage() {
       <MenuComponent />
       <Hero />
 
-      <Box
-      sx={{
-        component:"form",
-        width: '97%',
-        margin: 'auto',
-        padding: '40px',
-        borderRadius: '10px',
-        boxShadow: 3,
-        backgroundColor: '#ff9900',
-        textAlign: 'center',
-        mt: 3,
-        p: 3,
-      }}
-    >
-  
-      <Typography variant="h5" align='center' gutterBottom>
-          Components
-        </Typography>
-        <hr></hr>
-        <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
-          {sections.map((value) => (
-            <ListItem
-              key={value.description}
-              disableGutters
-              secondaryAction={
-                <Button onClick={() => redirectToLink(value)}
-                width = '200%'
-                variant="contained"
-                sx={{ mt: 3, mb: 2 }}>
-                  {value.function}
-                </Button>
-              }
+      <hr />
+      <List sx={{ width: '100%', bgcolor: 'white' }}>
+        {sections.map((value) => (
+          <ListItem key={value.description} disableGutters>
+            <a
+              href={redirectToLink(value)}
+              style={{ width: '100%', textDecoration: 'none', display: 'flex', alignItems: 'center' }}
             >
+              <LinkIcon style={{ marginRight: '10px' }} /> {/* Adjust the icon placement */}
               <ListItemText primary={value.description} />
-            </ListItem>
-          ))}
-        </List>
-    </Box>
+            </a>
+          </ListItem>
+        ))}
+      </List>
     </div>
   );
 }
